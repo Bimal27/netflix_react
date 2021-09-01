@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import AddComment from "./AddComment";
 import DisplayComments from "./DisplayComments";
 // import CommentsDropdown from './CommentsDropdown'
@@ -21,13 +22,14 @@ class Movie extends Component {
       <div className="col-md-2 col-lg-2 movie-container mx-0 px-1">
         {this.props.movie.Title && (
           <>
-            <a onClick={() => this.setState({ show: true })}>
+            <Link to={"/details/" + this.props.movie.imdbID}>
               <img
                 src={this.props.movie.Poster}
                 className="img-fluid carousel-img"
                 alt="Movie Here"
               />
-            </a>
+              </Link>
+           
             <Modal show={this.state.show} onHide={() => this.handleModal()}>
               <Modal.Header closeButton>
                 {this.props.movie.Title} (<i>{this.props.movie.Year}</i>)

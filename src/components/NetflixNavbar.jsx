@@ -48,7 +48,7 @@ class CustomNavbar extends Component {
 
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg">
+      <Navbar id="navbar" collapseOnSelect expand="lg">
         {/* <Container > */}
         <Navbar.Brand>
           <img src={NetflixLogo} id="logo" alt="logo" />
