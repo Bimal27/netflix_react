@@ -8,14 +8,14 @@ import DisplayComments from "./DisplayComments";
 
 
 class Movie extends Component {
-  state = {
-    show: false,
-    // selectedMovie:{}
-  };
+  // state = {
+  //   show: false,
+  //   // selectedMovie:{}
+  // };
 
-  handleModal() {
-    this.setState({ show: !this.state.show });
-  }
+  // handleModal() {
+  //   this.setState({ show: !this.state.show });
+  // }
 
   render() {
     return (
@@ -30,7 +30,7 @@ class Movie extends Component {
               />
               </Link>
            
-            <Modal show={this.state.show} onHide={() => this.handleModal()}>
+            {/* <Modal show={this.state.show} onHide={() => this.handleModal()}>
               <Modal.Header closeButton>
                 {this.props.movie.Title} (<i>{this.props.movie.Year}</i>)
               </Modal.Header>
@@ -38,7 +38,7 @@ class Movie extends Component {
                 <DisplayComments selectedMovie={this.props.movie.imdbID} />
                 <AddComment selectedMovie={this.props.movie} />
               </Modal.Body>
-            </Modal>
+            </Modal> */}
           </>
         )}
       </div>

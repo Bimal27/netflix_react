@@ -1,10 +1,16 @@
 import { useState } from "react"
 import { useEffect } from "react"
 
+
+
 const ShowDetails = ({match})=>{
 
     const [movie, setMovie] = useState(null)
     const [comments,setComments] = useState([])
+
+
+ 
+    
 
    useEffect(()=>{
        const movies = async ()=>{
@@ -45,6 +51,7 @@ const ShowDetails = ({match})=>{
                 <h4 className="mt-3">{movie.Title} ( {movie.Actors} )</h4>
                 <div><p>{movie.Released} - {movie.Runtime}</p></div>
                 <p>{movie.Plot}</p>
+
                 <ul style={{listStyle:'none'}}>
                     <h5 style={{textDecoration:'underline'}}>Comments</h5>
                     {

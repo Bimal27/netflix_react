@@ -13,6 +13,7 @@ import Avatar from "../assets/cat.jpg";
 import "../style.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosNotifications } from "react-icons/io";
+import {withRouter} from 'react-router-dom';
 
 class CustomNavbar extends Component {
   state = {
@@ -89,6 +90,7 @@ class CustomNavbar extends Component {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+            <Button onClick={() => this.props.history.push('/registration')} className="btn btn-dark" id="register-btn">Register</Button>
           </Nav>
         </Navbar.Collapse>
         {/* </Container> */}
@@ -97,4 +99,4 @@ class CustomNavbar extends Component {
   }
 }
 
-export default CustomNavbar;
+export default withRouter(CustomNavbar)
