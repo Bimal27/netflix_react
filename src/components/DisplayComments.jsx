@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Button } from "react-bootstrap";
+
 
 class DisplayComments extends Component {
   state = {
@@ -13,8 +13,7 @@ class DisplayComments extends Component {
           this.props.selectedMovie,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFjZjYyZjJkNTI2MjAwMTViNmRjOTUiLCJpYXQiOjE2MjkyODc5ODMsImV4cCI6MTYzMDQ5NzU4M30.nNXVsU3Xm3rtBjwRiDZJUn8LcZawq-ItVaCq0cX5GZs",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTMyODZiYTJjMzgzNjAwMTU4NWE3MTgiLCJpYXQiOjE2MzA3MDEyNDMsImV4cCI6MTYzMTkxMDg0M30.4no578CvSqcpn4tFJIiKRdSs0C2awl8cutLVaCS9azo"
           },
         }
       );

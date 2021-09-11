@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Carousel } from 'react-bootstrap';
 import Movie from './Movie'
-import CarouselButton from './CarouselButton'
+
 
 class BimalCarousel extends Component {
 

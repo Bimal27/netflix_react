@@ -1,5 +1,7 @@
 import { Component } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Spinner} from "react-bootstrap";
+import {withRouter} from 'react-router-dom'
+
 
 class AddComment extends Component {
   state = {
@@ -8,18 +10,27 @@ class AddComment extends Component {
       rate: 1,
       elementId: this.props.selectedMovie.imdbID,
     },
+    isLoading: false
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
+    alert('Comments added successfully')
+    this.setState({
+      isLoading: true
+  })
+
+    setTimeout(() => {
+      this.props.history.push('/')
+  }, 2000)
+  
     try {
       fetch("https://striveschool-api.herokuapp.com/api/comments/", {
         method: "POST",
         body: JSON.stringify(this.state.body),
         headers: {
           "Content-type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFjZjYyZjJkNTI2MjAwMTViNmRjOTUiLCJpYXQiOjE2MjkyODc5ODMsImV4cCI6MTYzMDQ5NzU4M30.nNXVsU3Xm3rtBjwRiDZJUn8LcZawq-ItVaCq0cX5GZs",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTMyODZiYTJjMzgzNjAwMTU4NWE3MTgiLCJpYXQiOjE2MzA3MDEyNDMsImV4cCI6MTYzMTkxMDg0M30.4no578CvSqcpn4tFJIiKRdSs0C2awl8cutLVaCS9azo"
         },
       });
     } catch (error) {}
@@ -68,7 +79,9 @@ class AddComment extends Component {
           </Form.Group>
 
           <Button variant="primary" type="submit">
+          {this.state.isLoading && <Spinner animation="border" variant="light" style={{ width: '20px', height: '20px',marginRight:'5px'}} />}
             Add comment
+            
           </Button>
         </Form>
       </>
@@ -76,4 +89,4 @@ class AddComment extends Component {
   }
 }
 
-export default AddComment;
+export default withRouter(AddComment);
